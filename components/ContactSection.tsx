@@ -18,21 +18,15 @@ export default function ContactSection() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        access_key: "df9d78a5-9609-49b6-bc51-a952e75380d7",
-        subject: `[Humend HR] 문의 - ${formData.company}`,
-        ...formData,
-      }),
-    });
-    if (res.ok) {
-      setSubmitted(true);
-      setFormData({ company: "", name: "", phone: "", email: "", content: "" });
-    }
+    const subject = encodeURIComponent(`[Humend HR] 문의 - ${formData.company}`);
+    const body = encodeURIComponent(
+      `회사명: ${formData.company}\n담당자명: ${formData.name}\n연락처: ${formData.phone}\n이메일: ${formData.email}\n\n문의내용:\n${formData.content}`
+    );
+    window.location.href = `mailto:leehacksoo@gmail.com?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+    setFormData({ company: "", name: "", phone: "", email: "", content: "" });
   };
 
   return (
@@ -104,7 +98,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-white font-semibold text-sm md:text-xl">카카오톡 문의</p>
-                  <a href="#" className="text-primary text-base md:text-xl font-medium mt-1 inline-block hover:underline">
+                  <a href="https://open.kakao.com/o/gzkiNWxf" target="_blank" rel="noopener noreferrer" className="text-primary text-base md:text-xl font-medium mt-1 inline-block hover:underline">
                     카카오톡으로 문의하기 →
                   </a>
                 </div>

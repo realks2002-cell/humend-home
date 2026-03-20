@@ -37,6 +37,14 @@ export default function Header() {
             {item.label}
           </button>
         ))}
+        <a
+          href="https://humendhr.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-white text-lg font-medium transition-colors cursor-pointer"
+        >
+          채용공고
+        </a>
         <button
           onClick={() => scrollToSection(5)}
           className="bg-primary hover:bg-primary/80 text-white text-base font-semibold rounded-full px-5 py-2 transition-colors cursor-pointer border-none"
