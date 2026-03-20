@@ -10,10 +10,10 @@ const notoSansKR = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: "휴먼플로우",
-  description: "대한민국 HR서비스 리딩 기업 휴먼플로우",
+  title: "Humend HR",
+  description: "대한민국 HR서비스 리딩 기업 Humend HR",
   openGraph: {
-    title: "휴먼플로우",
+    title: "Humend HR",
     description: "대한민국 HR의 미래를 만들어가는 종합 인력 솔루션 기업",
   },
 };

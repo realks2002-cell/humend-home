@@ -23,7 +23,7 @@ export default function AboutSection() {
       />
       <div className="absolute inset-0 bg-black/50" />
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 py-16 text-center -mt-[100px]">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 py-16 text-center -mt-[50px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,8 +44,8 @@ export default function AboutSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <p className="text-white/90 text-lg md:text-2xl leading-relaxed max-w-2xl mx-auto mb-6">
-            휴먼플로우는 기업과 사람을 연결하는 전문 아웃소싱 파트너입니다.
+          <p className="text-white/75 text-base md:text-[1.45rem] leading-relaxed max-w-[806px] mx-auto mb-6 font-semibold">
+            Humend HR는 기업과 사람을 연결하는 전문 아웃소싱 파트너입니다.
             <br className="hidden md:block" />
             다양한 산업현장의 경험과 체계적인 인력관리 시스템을 바탕으로
             <br className="hidden md:block" />
@@ -54,8 +54,8 @@ export default function AboutSection() {
             <br />
             단순 인력 공급이 아닌, 지속 가능한 인력 운영 솔루션을 제공합니다.
           </p>
-          <p className="text-white/70 text-lg md:text-xl mb-10">
-            - 휴먼플로우 임직원 일동 -
+          <p className="text-white/75 text-base md:text-lg mb-10 font-semibold">
+            -  (주)Humend HR 임직원 일동  -
           </p>
         </motion.div>
 

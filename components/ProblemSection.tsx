@@ -1,7 +1,9 @@
 "use client";
 
+import { Fragment } from "react";
 import { motion } from "framer-motion";
 import {
+  ChevronRight,
   UserX,
   RefreshCw,
   Users,
@@ -61,7 +63,7 @@ export default function ProblemSection() {
         transition={{ duration: 8, ease: "easeOut" }}
       />
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-10 text-center" style={{ marginTop: "100px" }}>
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-10 text-center" style={{ marginTop: "60px" }}>
 
         <motion.div
           className="text-center mb-8 md:mb-10"
@@ -74,7 +76,7 @@ export default function ProblemSection() {
             왜 많은 기업이
           </p>
           <h3 className="text-white text-[26px] md:text-5xl lg:text-[50px] font-bold leading-snug mb-6">
-            휴먼플로우를 선택할까요?
+            Humend HR를 선택할까요?
           </h3>
           <div className="hidden md:flex flex-wrap justify-center gap-3">
             {problems.map(({ icon: Icon, label }) => (
@@ -126,17 +128,21 @@ export default function ProblemSection() {
           <h3 className="text-white text-xl md:text-3xl font-bold mb-6 md:mb-8">
             체계적인 인력 운영 프로세스
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
-            {process.map(({ icon: Icon, title }) => (
-              <div
-                key={title}
-                className="border border-white/20 rounded-xl py-6 px-4 bg-white/5 backdrop-blur-sm flex flex-col items-center gap-3"
-              >
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Icon className="text-primary w-6 h-6 md:w-7 md:h-7" />
+          <div className="grid grid-cols-2 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] gap-y-2 md:gap-x-1 md:gap-y-0 items-center">
+            {process.map(({ icon: Icon, title }, i) => (
+              <Fragment key={title}>
+                <div className="border border-white/20 rounded-xl py-6 px-4 bg-white/5 backdrop-blur-sm flex flex-col items-center gap-3">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/20 flex items-center justify-center">
+                    <Icon className="text-primary w-6 h-6 md:w-7 md:h-7" />
+                  </div>
+                  <p className="text-white text-sm md:text-base font-semibold">{title}</p>
                 </div>
-                <p className="text-white text-sm md:text-base font-semibold">{title}</p>
-              </div>
+                {i < process.length - 1 && (
+                  <div className="hidden md:flex items-center justify-center">
+                    <ChevronRight className="text-white/40 w-6 h-6" />
+                  </div>
+                )}
+              </Fragment>
             ))}
           </div>
         </motion.div>

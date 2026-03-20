@@ -53,7 +53,7 @@ export default function WhyChooseSection() {
             왜 많은 기업이
           </p>
           <h2 className="text-white text-2xl md:text-5xl lg:text-[50px] font-bold leading-snug">
-            휴먼플로우를 선택할까요?
+            Humend HR를 선택할까요?
           </h2>
         </motion.div>
 

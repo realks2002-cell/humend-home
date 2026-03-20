@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const sections = [
   { index: 1, label: "회사소개" },
-  { index: 2, label: "서비스안내" },
+  { index: 2, label: "사업안내" },
   { index: 3, label: "문제해소" },
   { index: 4, label: "운영개선" },
 ];
@@ -69,7 +69,7 @@ export default function SideNav() {
       <button
         onClick={() => scrollToSection(5)}
 
-        className="mt-3 bg-primary hover:bg-primary-dark text-white text-base font-semibold rounded-full px-6 py-3 transition-all duration-300 cursor-pointer border-none outline-none"
+        className="mt-3 bg-primary hover:bg-primary-dark text-white text-sm font-semibold rounded-full px-5 py-2.5 transition-all duration-300 cursor-pointer border-none outline-none"
       >
         Contact Us
       </button>

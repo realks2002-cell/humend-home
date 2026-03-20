@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="absolute inset-0 w-full h-full">
         <img
           src="/hero.jpg"
-          alt="종합 인력도급 전문기업 휴먼플로우"
+          alt="종합 인력도급 전문기업 Humend HR"
           className="w-full h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/55 to-black/65"></div>
@@ -22,7 +22,7 @@ export default function Hero() {
 
           {/* Subheading */}
           <p className="text-xl lg:text-2xl text-gray-200 mb-12 leading-relaxed max-w-3xl mx-auto font-light">
-            필요한 인력, 필요한 순간 (주)휴먼플로우
+            필요한 인력, 필요한 순간 (주)Humend HR
           </p>
 
           {/* CTA Buttons */}

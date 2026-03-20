@@ -6,8 +6,8 @@ import { Factory, Package, Monitor, HardHat } from "lucide-react";
 const services = [
   {
     icon: Factory,
-    title: "생산 / 제조 인력 아웃소싱",
-    desc: "조립, 검사, 포장, 라인 작업 등 현장 적응력이 높은 인력자원",
+    title: "단기 알바  인력 아웃소싱",
+    desc: "웨딩, 팝업행사, 호텔 연회 등 현장 적응력이 높은 인력자원",
   },
   {
     icon: Package,

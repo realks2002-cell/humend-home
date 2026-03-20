@@ -27,7 +27,7 @@ export default function About() {
             <div className="w-full rounded-2xl overflow-hidden">
               <img
                 src="/business-meeting-v2.jpeg"
-                alt="휴먼플로우 전문 팀"
+                alt="Humend HR 전문 팀"
                 className="w-full h-auto block"
               />
             </div>
@@ -36,7 +36,7 @@ export default function About() {
           {/* Content */}
           <div className="lg:col-span-2">
             <h2 className="text-4xl lg:text-5xl font-bold text-[#0F1B3D] mb-10 leading-tight">
-              왜 많은 기업이<br />휴먼플로우를 선택할까요?
+              왜 많은 기업이<br />Humend HR를 선택할까요?
             </h2>
 
             <div className="space-y-6 mb-8">

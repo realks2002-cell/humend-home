@@ -9,7 +9,7 @@ const slides = [
     subtitle: "STABLE WORKFORCE PARTNER",
     title: "기업 운영의",
     titleHighlight: "안정적인 인력파트너",
-    description: "필요한 인력, 필요한 순간 (주)휴먼플로우",
+    description: "필요한 인력, 필요한 순간 (주)Humend HR",
     bgImage:
       "/growth.jpg",
   },
@@ -18,7 +18,7 @@ const slides = [
     title: "종합 인력 솔루션",
     titleHighlight: "",
     description:
-      "제조, 건설, 물류 등 다양한 산업 분야에 최적화된 맞춤형 인력도급 서비스를 제공합니다",
+      "다양한 산업 분야에 최적화된 맞춤형 인력도급 서비스를 제공합니다",
     bgImage:
       "/meeting.jpg",
   },
@@ -89,7 +89,7 @@ export default function HeroSlider() {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-center h-full px-6 md:px-16 lg:px-24 max-w-[1400px] ml-[30px]">
+      <div className="relative z-10 flex flex-col justify-center h-full px-6 md:px-16 lg:px-24 max-w-[1400px] ml-[30px] -mt-[50px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -115,18 +115,32 @@ export default function HeroSlider() {
             <p className="text-white/60 text-xs md:text-lg mt-3 md:mt-6 tracking-wide">
               {slides[current].description}
             </p>
-
-            <button
-              onClick={() => document.getElementById("problem")?.scrollIntoView({ behavior: "smooth" })}
-              className="mt-8 md:mt-10 border border-white/40 text-white px-6 py-3 text-sm flex items-center gap-3 hover:bg-white/10 transition-colors"
-            >
-              자세히 보기
-              <span className="text-lg">→</span>
-            </button>
           </motion.div>
         </AnimatePresence>
       </div>
 
+
+      {/* Cards */}
+      <div className="absolute bottom-[212px] left-0 right-0 z-10 flex justify-center px-6">
+        <div className="w-full max-w-[630px] grid grid-cols-3 gap-2 md:gap-3">
+          {[
+            { title: "인력공급 전문", desc: "검증된 전문 인력" },
+            { title: "10년+ 노하우", desc: "업계 최고 경력" },
+            { title: "맞춤형 인력관리", desc: "업종별 최적 솔루션" },
+          ].map((card, i) => (
+            <motion.div
+              key={card.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 + i * 0.15 }}
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-3 py-3 md:px-4 md:py-3 text-center"
+            >
+              <p className="text-white font-bold text-sm md:text-base">{card.title}</p>
+              <p className="text-white/50 text-xs md:text-sm mt-0.5">{card.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
 
       {/* Bottom area */}
       <div className="absolute bottom-8 left-0 right-0 z-10 flex flex-col items-center gap-6">

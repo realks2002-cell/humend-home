@@ -28,7 +28,7 @@ export default function Problems() {
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-[#0F1B3D] mb-4 leading-tight">
             이런 문제가 있다면<br />
-            <span className="text-[#C8A35F]">휴먼플로우</span>가 해답입니다
+            <span className="text-[#C8A35F]">Humend HR</span>가 해답입니다
           </h2>
         </div>
 
@@ -48,7 +48,7 @@ export default function Problems() {
 
         <div className="text-center mt-12">
           <p className="text-[26px] font-bold text-[#C0392B]">
-            휴먼플로우가 가장 현실적인 해결책을 제시합니다.
+            Humend HR가 가장 현실적인 해결책을 제시합니다.
           </p>
         </div>
       </div>

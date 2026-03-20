@@ -17,7 +17,7 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`[휴먼플로우 문의] ${formData.companyName} - ${formData.inquiryType}`);
+    const subject = encodeURIComponent(`[Humend HR 문의] ${formData.companyName} - ${formData.inquiryType}`);
     const body = encodeURIComponent(
       `회사명: ${formData.companyName}\n담당자명: ${formData.contactName}\n연락처: ${formData.phone}\n이메일: ${formData.email}\n문의유형: ${formData.inquiryType}\n\n문의내용:\n${formData.message}`
     );
@@ -39,7 +39,7 @@ export default function ContactForm() {
             업체 문의
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            휴먼플로우는 인력을 보내는 회사가 아니라 현장을 안정시키는 파트너입니다
+            Humend HR는 인력을 보내는 회사가 아니라 현장을 안정시키는 파트너입니다
           </p>
         </div>
 

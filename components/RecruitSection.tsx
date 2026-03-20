@@ -53,7 +53,7 @@ export default function RecruitSection() {
           <h2 className="text-white text-[26px] md:text-5xl lg:text-[50px] font-bold mb-4 md:mb-6" style={{ lineHeight: "calc(1em + 8px)" }}>
             이런 문제가 있다면
             <br />
-            휴먼플로우가 해답입니다.
+            Humend HR가 해답입니다.
           </h2>
         </motion.div>
 
@@ -72,8 +72,8 @@ export default function RecruitSection() {
                 variants={itemVariants}
                 className="flex items-center justify-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-3 md:px-6 md:py-4 backdrop-blur-sm"
               >
-                <Icon className="text-primary w-4 h-4 md:w-6 md:h-6" />
-                <span className="text-white text-sm md:text-base font-medium">{label}</span>
+                <Icon className="text-primary w-5 h-5 md:w-7 md:h-7" />
+                <span className="text-white text-base md:text-lg font-medium">{label}</span>
               </motion.div>
             ))}
           </div>
@@ -85,8 +85,8 @@ export default function RecruitSection() {
                 variants={itemVariants}
                 className="flex items-center justify-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-3 md:px-6 md:py-4 backdrop-blur-sm"
               >
-                <Icon className="text-primary w-4 h-4 md:w-6 md:h-6" />
-                <span className="text-white text-sm md:text-base font-medium">{label}</span>
+                <Icon className="text-primary w-5 h-5 md:w-7 md:h-7" />
+                <span className="text-white text-base md:text-lg font-medium">{label}</span>
               </motion.div>
             ))}
           </div>
@@ -99,10 +99,10 @@ export default function RecruitSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p className="text-yellow-300 text-xl md:text-3xl leading-relaxed font-semibold">
+          <p className="text-yellow-300/90 text-xl md:text-3xl leading-relaxed font-semibold">
             필요한 인력, 바로 요청하세요.
             <br />
-            휴먼플로우가 가장 빠르게 대응합니다.
+            Humend HR가 가장 빠르게 대응합니다.
           </p>
         </motion.div>
       </div>
