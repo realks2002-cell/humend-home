@@ -98,7 +98,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-white font-semibold text-sm md:text-xl">카카오톡 문의</p>
-                  <a href="https://open.kakao.com/o/gzkiNWxf" target="_blank" rel="noopener noreferrer" className="text-primary text-base md:text-xl font-medium mt-1 inline-block hover:underline">
+                  <a href="https://pf.kakao.com/_sPCKb/chat" target="_blank" rel="noopener noreferrer" className="text-primary text-base md:text-xl font-medium mt-1 inline-block hover:underline">
                     카카오톡으로 문의하기 →
                   </a>
                 </div>
