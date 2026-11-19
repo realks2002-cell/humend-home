@@ -75,7 +75,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-white font-semibold text-sm md:text-xl">이메일 문의</p>
-                  <p className="text-white/80 text-base md:text-xl mt-1">humend@humendhr.com</p>
+                  <p className="text-white/80 text-base md:text-xl mt-1">leehacksoo@gmail.com</p>
                 </div>
               </div>
 
