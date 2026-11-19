@@ -24,7 +24,7 @@ export default function ContactSection() {
     const body = encodeURIComponent(
       `회사명: ${formData.company}\n담당자명: ${formData.name}\n연락처: ${formData.phone}\n이메일: ${formData.email}\n\n문의내용:\n${formData.content}`
     );
-    window.location.href = `mailto:leehacksoo@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:leehacksoo@gmail.com?cc=realks2002@gmail.com&subject=${subject}&body=${body}`;
     setSubmitted(true);
     setFormData({ company: "", name: "", phone: "", email: "", content: "" });
   };
