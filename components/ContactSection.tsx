@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 
@@ -13,20 +13,35 @@ export default function ContactSection() {
     content: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`[Humend HR] 문의 - ${formData.company}`);
-    const body = encodeURIComponent(
-      `회사명: ${formData.company}\n담당자명: ${formData.name}\n연락처: ${formData.phone}\n이메일: ${formData.email}\n\n문의내용:\n${formData.content}`
-    );
-    window.location.href = `mailto:leehacksoo@gmail.com?cc=realks2002@gmail.com&subject=${subject}&body=${body}`;
-    setSubmitted(true);
-    setFormData({ company: "", name: "", phone: "", email: "", content: "" });
+    setSending(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const result = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setError(result.error ?? "문의 전송에 실패했습니다.");
+        return;
+      }
+      setSubmitted(true);
+      setFormData({ company: "", name: "", phone: "", email: "", content: "" });
+    } catch {
+      setError("네트워크 오류로 문의를 보내지 못했습니다.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -186,11 +201,25 @@ export default function ContactSection() {
                 />
               </div>
 
+              {error && (
+                <div role="alert" className="rounded-lg border border-red-400/40 bg-red-500/10 px-5 py-4 text-sm text-red-200">
+                  <p className="font-semibold">{error}</p>
+                  <p className="mt-1 text-red-200/80">
+                    번거로우시겠지만 전화(02-875-8332) 또는{" "}
+                    <a href="https://pf.kakao.com/_sPCKb/chat" target="_blank" rel="noopener noreferrer" className="underline">
+                      카카오톡
+                    </a>
+                    으로 문의해주세요.
+                  </p>
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg transition-colors text-lg"
+                disabled={sending}
+                className="w-full bg-primary hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold py-4 rounded-lg transition-colors text-lg"
               >
-                문의 보내기
+                {sending ? "보내는 중..." : "문의 보내기"}
               </button>
             </form>
             )}
